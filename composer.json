@@ -1,5 +1,6 @@
 {
     "require": {
-        "lsolesen/pel": "^0.9.10"
+        "lsolesen/pel": "^0.9.10",
+        "kosinix/grafika": "dev-master"
     }
 }
