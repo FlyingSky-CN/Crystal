@@ -2,6 +2,7 @@
 
 namespace Crystal;
 
+use lsolesen\pel\PelIfd;
 use lsolesen\pel\PelJpeg;
 use lsolesen\pel\PelTag;
 
@@ -18,6 +19,8 @@ class Exif
             $image = new Image($dir . '/' . $file, $file);
             $summaries[] = $image->getSummary();
         }
+
+        array_multisort(array_column($summaries, 'date'), SORT_DESC, $summaries);
 
         return $summaries;
     }
@@ -59,14 +62,15 @@ class Image
 
         $tiff = $exif->getTiff();
         $ifd0 = $tiff->getIfd();
+        $eifd = $ifd0->getSubIfd(PelIfd::EXIF);
 
         $desc = $ifd0->getEntry(PelTag::IMAGE_DESCRIPTION);
         $title = $ifd0->getEntry(PelTag::XP_TITLE);
-        $date = $ifd0->getEntry(PelTag::DATE_TIME_ORIGINAL);
+        $date = $eifd->getEntry(PelTag::DATE_TIME_ORIGINAL);
 
-        $this->summary['title'] = $title->getValue();
-        $this->summary['desc']  = $desc->getValue();
-        $this->summary['date']  = '';//TODO
+        if ($title !== null) $this->summary['title'] = $title->getValue();
+        if ($desc !== null) $this->summary['desc']  = $desc->getValue();
+        if ($date !== null) $this->summary['date']  = date('Y-m-d', $date->getValue());
 
         return (object)$this->summary;
     }
