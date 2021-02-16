@@ -1,9 +1,6 @@
 <?php
 
-use Crystal\Exif;
-use Crystal\Theme;
-use lsolesen\pel\PelJpeg;
-use lsolesen\pel\PelTag;
+use Crystal\Crystal;
 
 define('__Crystal_DIR_Theme__', __DIR__ . '/theme');
 define('__Crystal_DIR_Image__', __DIR__ . '/image');
@@ -14,4 +11,4 @@ require __DIR__ . '/config.ini.php';
 require __DIR__ . '/vendor/autoload.php';
 require __Crystal_DIR_App__ . '/Crystal.php';
 
-Theme::make("lens", ['images' => Exif::fetchDir(__Crystal_DIR_Image__)]);
+Crystal::run();

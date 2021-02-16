@@ -1,9 +1,10 @@
 <?php
 
 define('__Crystal_Config__', [
+    'theme' => 'multiverse',
     'title' => 'Crystal',
     'subtitle' => 'Hello World.',
-    'description' => 'Here should be a description but I had no idea what to put on yet.',
+    'description' => 'Let\'s go back to the beginning when the earth, the sun, the stars all aligned.',
     'copyright' => '2021 Crystal',
     'socials' => [
         ['Twitter', 'brands fa-twitter', '#'],
@@ -11,6 +12,8 @@ define('__Crystal_Config__', [
         ['Instagram', 'brands fa-instagram', '#'],
         ['GitHub', 'brands fa-github', '#'],
         ['Dribbble', 'brands fa-dribbble', '#'],
-        ['LinkedIn', 'brands fa-linkedin-in', '#'],
+    ],
+    'option' => [
+        'show_title' => false
     ]
 ]);

@@ -42,7 +42,7 @@
 			<?php foreach ($data->images as $image) : ?>
 				<article>
 					<a class="thumbnail" href="./image/<?= $image->file ?>" data-position="left center">
-						<img src="./image/<?= $image->file ?>" alt="" />
+						<img src="./temp/thumb/<?= $image->file ?>" alt="" />
 					</a>
 					<h2>
 						<?= $image->title ?>

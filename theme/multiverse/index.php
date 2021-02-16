@@ -37,11 +37,13 @@
 			<?php foreach ($data->images as $image) : ?>
 				<article class="thumb">
 					<a class="image" href="./image/<?= $image->file ?>">
-						<img src="./image/<?= $image->file ?>" alt="" />
+						<img src="./temp/thumb/<?= $image->file ?>" alt="" />
 					</a>
-					<h2>
-						<?= $image->title ?>
-					</h2>
+					<?php if ($config->option->show_title) : ?>
+						<h2>
+							<?= $image->title ?>
+						</h2>
+					<?php endif; ?>
 					<p>
 						<?= $image->date ?>&nbsp;&nbsp;<?= $image->desc ?>
 					</p>
