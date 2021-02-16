@@ -44,9 +44,6 @@
 					<a class="thumbnail" href="./image/<?= $image->file ?>" data-position="left center">
 						<img src="./temp/thumb/<?= $image->file ?>" alt="" />
 					</a>
-					<h2>
-						<?= $image->title ?>
-					</h2>
 					<p>
 						<?= $image->date ?>&nbsp;&nbsp;<?= $image->desc ?>
 					</p>

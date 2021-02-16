@@ -13,7 +13,5 @@ define('__Crystal_Config__', [
         ['GitHub', 'brands fa-github', '#'],
         ['Dribbble', 'brands fa-dribbble', '#'],
     ],
-    'option' => [
-        'show_title' => false
-    ]
+    'option' => []
 ]);

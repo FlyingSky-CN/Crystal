@@ -41,7 +41,6 @@ class Image
      */
     private $summary = [
         'file'  => 'image.jpg',
-        'title' => 'No Title',
         'desc'  => 'No Description',
         'date'  => '1970-01-01',
     ];
@@ -65,10 +64,8 @@ class Image
         $eifd = $ifd0->getSubIfd(PelIfd::EXIF);
 
         $desc = $ifd0->getEntry(PelTag::IMAGE_DESCRIPTION);
-        $title = $ifd0->getEntry(PelTag::XP_TITLE);
         $date = $eifd->getEntry(PelTag::DATE_TIME_ORIGINAL);
 
-        if ($title !== null) $this->summary['title'] = $title->getValue();
         if ($desc !== null) $this->summary['desc']  = $desc->getValue();
         if ($date !== null) $this->summary['date']  = date('Y-m-d', $date->getValue());
 

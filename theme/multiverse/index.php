@@ -39,11 +39,6 @@
 					<a class="image" href="./image/<?= $image->file ?>">
 						<img src="./temp/thumb/<?= $image->file ?>" alt="" />
 					</a>
-					<?php if ($config->option->show_title) : ?>
-						<h2>
-							<?= $image->title ?>
-						</h2>
-					<?php endif; ?>
 					<p>
 						<?= $image->date ?>&nbsp;&nbsp;<?= $image->desc ?>
 					</p>
