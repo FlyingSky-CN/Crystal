@@ -14,4 +14,4 @@ require __DIR__ . '/config.ini.php';
 require __DIR__ . '/vendor/autoload.php';
 require __Crystal_DIR_App__ . '/Crystal.php';
 
-Theme::make("multiverse", ['images' => Exif::fetchDir(__Crystal_DIR_Image__)]);
+Theme::make("lens", ['images' => Exif::fetchDir(__Crystal_DIR_Image__)]);

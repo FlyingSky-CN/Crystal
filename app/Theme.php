@@ -9,6 +9,6 @@ class Theme
         $config = (object)__Crystal_Config__;
         $data = (object)$data;
 
-        require __Crystal_DIR_Theme__ . "/$template/index.html";
+        require __Crystal_DIR_Theme__ . "/$template/index.php";
     }
 }

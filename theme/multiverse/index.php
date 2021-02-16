@@ -1,26 +1,23 @@
+<?php if (!defined('__Crystal_DIR_Theme__')) exit(); ?>
 <!DOCTYPE HTML>
 <html>
 
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./theme/multiverse/assets/css/main.css" />
 	<title>
 		<?= $config->title ?> -
 		<?= $config->subtitle ?>
 	</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="./theme/multiverse/assets/css/main.css" />
 	<noscript>
 		<link rel="stylesheet" href="./theme/multiverse/assets/css/noscript.css" />
 	</noscript>
 </head>
 
 <body class="is-preload">
-
-	<!-- Wrapper -->
 	<div id="wrapper">
-
-		<!-- Header -->
 		<header id="header">
 			<h1>
 				<a href="index.html">
@@ -36,25 +33,21 @@
 				</ul>
 			</nav>
 		</header>
-
-		<!-- Main -->
 		<div id="main">
-			<?php foreach($data->images as $image) :?>
-			<article class="thumb">
-				<a class="image" href="./image/<?= $image->file ?>">
-					<img src="./image/<?= $image->file ?>" alt="" />
-				</a>
-				<h2>
-					<?= $image->title ?>
-				</h2>
-				<p>
-					<?= $image->desc ?>
-				</p>
-			</article>
+			<?php foreach ($data->images as $image) : ?>
+				<article class="thumb">
+					<a class="image" href="./image/<?= $image->file ?>">
+						<img src="./image/<?= $image->file ?>" alt="" />
+					</a>
+					<h2>
+						<?= $image->title ?>
+					</h2>
+					<p>
+						<?= $image->date ?>&nbsp;&nbsp;<?= $image->desc ?>
+					</p>
+				</article>
 			<?php endforeach; ?>
 		</div>
-
-		<!-- Footer -->
 		<footer id="footer" class="panel">
 			<div class="inner split">
 				<div>
@@ -66,14 +59,14 @@
 							<?= $config->description ?>
 						</p>
 						<ul class="icons">
-							<?php foreach($config->socials as $social): ?>
-							<li>
-								<a href="<?= $social[2] ?>" class="icon <?= $social[1] ?>">
-									<span class="label">
-										<?= $social[0] ?>
-									</span>
-								</a>
-							</li>
+							<?php foreach ($config->socials as $social) : ?>
+								<li>
+									<a href="<?= $social[2] ?>" class="icon <?= $social[1] ?>">
+										<span class="label">
+											<?= $social[0] ?>
+										</span>
+									</a>
+								</li>
 							<?php endforeach; ?>
 						</ul>
 					</section>
@@ -85,17 +78,13 @@
 				</div>
 			</div>
 		</footer>
-
 	</div>
-
-	<!-- Scripts -->
 	<script src="./assets/js/jquery.min.js"></script>
-	<script src="./theme/multiverse/assets/js/jquery.poptrox.min.js"></script>
+	<script src="./assets/js/jquery.poptrox.min.js"></script>
 	<script src="./assets/js/browser.min.js"></script>
 	<script src="./assets/js/breakpoints.min.js"></script>
 	<script src="./theme/multiverse/assets/js/util.js"></script>
 	<script src="./theme/multiverse/assets/js/main.js"></script>
-
 </body>
 
 </html>
